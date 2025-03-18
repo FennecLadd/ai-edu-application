@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Dashboard - EduAI</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-gray-900 text-white">
+    <!-- Navigation -->
+    <nav class="bg-gray-800 border-b border-purple-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <span class="text-2xl font-bold text-purple-500">Edu<span class="text-blue-400">AI</span></span>
+                    </div>
+                    <div class="hidden md:block">
+                        <div class="ml-10 flex items-baseline space-x-4">
+                            <a href="#" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium">Dashboard</a>
+                            <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Courses</a>
+                            <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Assignments</a>
+                            <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Students</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex items-center">
+                    <div class="relative">
+                        <button class="flex items-center text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+                            <span class="sr-only">Open user menu</span>
+                            <div class="h-8 w-8 rounded-full bg-purple-600 flex items-center justify-center">
+                                <span class="text-white font-medium">RJ</span>
+                            </div>
+                            <span class="ml-2 text-gray-300">Prof. Robert Johnson</span>
+                        </button>
+                    </div>
+                    <button class="ml-4 bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+                        <span class="sr-only">View notifications</span>
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Welcome Section -->
+        <div class="bg-gradient-to-r from-gray-800 to-gray-900 rounded-xl p-6 mb-8 border border-purple-700 shadow-lg">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div>
+                    <h1 class="text-2xl font-bold text-white mb-2">Welcome, Professor Johnson!</h1>
+                    <p class="text-gray-300">You have 15 pending assignment submissions to review and 3 course materials to update.</p>
+                </div>
+                <div class="mt-4 md:mt-0">
+                    <button class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-lg transition duration-300 mr-2">
+                        Review Submissions
+                    </button>
+                    <button class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg transition duration-300">
+                        Create Assignment
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dashboard Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- My Courses -->
+            <div class="bg-gray-800 rounded-xl p-6 border border-gray-700 shadow-lg">
+                <h2 class="text-xl font-bold text-purple-400 mb-4">My Courses</h2>
+                <div class="space-y-4">
+                    <div class="bg-gray-900 rounded-lg p-4 border-l-4 border-purple-500">
+                        <div class="flex justify-between items-center">
+                            <h3 class="font-semibold text-white">Advanced Mathematics</h3>
+                            <span class="text-xs bg-purple-900 text-purple-200 px-2 py-1 rounded-full">32 Students</span>
+                        </div>
+                        <p class="text-gray-400 text-sm mt-1">Spring 2025 - MATH401</p>
+                        <div class="mt-3 flex justify-between">
+                            <button class="text-xs bg-gray-800 hover:bg-gray-700 text-white px-2 py-1 rounded transition duration-300">
+                                View Course
+                            </button>
+                            <button class="text-xs bg-purple-800 hover:bg-purple-700 text-white px-2 py-1 rounded transition duration-300">
+                                Manage Students
+                            </button>
+                        </div>
+                    </div>
+                    <div class="bg-gray-900 rounded-lg p-4 border-l-4 border-blue-500">
+                        <div class="flex justify-between items-center">
+                            <h3 class="font-semibold text-white">Calculus II</h3>
+                            <span class="text-xs bg-blue-900 text-blue-200 px-2 py-1 rounded-full">45 Students</span>
+                        </div>
+                        <p class="text-gray-400 text-sm mt-1">Spring 2025 - MATH202</p>
+                        <div class="mt-3 flex justify-between">
+                            <button class="text-xs bg-gray-800 hover:bg-gray-700 text-white px-2 py-1 rounded transition duration-300">
+                                View Course
+                            </button>
+                            <button class="text-xs bg-blue-800 hover:bg-blue-700 text-white px-2 py-1 rounded transition duration-300">
+                                Manage Students
+                            </button>
+                        </div>
+                    </div>
+                    <div class="bg-gray-900 rounded-lg p-4 border-l-4 border-green-500">
+                        <div class="flex justify-between items-center">
+                            <h3 class="font-semibold text-white">Linear Algebra</h3>
+                            <span class="text-xs bg-green-900 text-green-200 px-2 py-1 rounded-full">28 Students</span>
+                        </div>
+                        <p class="text-gray-400 text-sm mt-1">Spring 2025 - MATH301</p>
+                        <div class="mt-3 flex justify-between">
+                            <button class="text-xs bg-gray-800 hover:bg-gray-700 text-white px-2 py-1 rounded transition duration-300">
+                                View Course
+                            </button>
+                            <button class="text-xs bg-green-800 hover:bg-green-700 text-white px-2 py-1 rounded transition duration-300">
+                                Manage Students
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <button class="mt-4 w-full py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg transition duration-300">
+                    Create New Course
+                </button>
+            </div>
+
+            <!-- Recent Submissions -->
+            <div class="bg-gray-800 rounded-xl p-6 border border-gray-700 shadow-lg">
+                <h2 class="text-xl font-bold text-purple-400 mb-4">Recent Submissions</h2>
+                <div class="space-y-4">
+                    <div class="bg-gray-900 rounded-lg p-4">
+                        <div class="flex justify-between">
+                            <div>
+                                <h3 class="font-semibold text-white">Linear Algebra Quiz</h3>
+                                <p class="text-gray-400 text-sm">John Smith</p>
+                            </div>
+                            <span class="text-xs bg-yellow-600 text-yellow-100 px-2 py-1 h-fit rounded-full">Pending Review</span>
+                        </div>
+                        <div class="mt-3 flex justify-between items-center">
+                            <span class="text-xs text-gray-500">Submitted 2 hours ago</span>
+                            <button class="text-xs bg-purple-600 hover:bg-purple-700 text-white px-2 py-1 rounded transition duration-300">
+                                Review
+                            </button>
+                        </div>
+                    </div>
+                    <div class="bg-gray-900 rounded-lg p-4">
+                        <div class="flex justify-between">
+                            <div>
+                                <h3 class="font-semibold text-white">Matrix Operations Assignment</h3>
+                                <p class="text-gray-400 text-sm">Emily Johnson</p>
+                            </div>
+                            <span class="text-xs bg-yellow-600 text-yellow-100 px-2 py-1 h-fit rounded-full">Pending Review</span>
+                        </div>
+                        <div class="mt-3 flex justify-between items-center">
+                            <span class="text-xs text-gray-500">Submitted 5 hours ago</span>
+                            <button class="text-xs bg-purple-600 hover:bg-purple-700 text-white px-2 py-1 rounded transition duration-300">
+                                Review
+                            </button>
+                        </div>
+                    </div>
+                    <div class="bg-gray-900 rounded-lg p-4">
+                        <div class="flex justify-between">
+                            <div>
+                                <h3 class="font-semibold text-white">Calculus II Midterm</h3>
+                                <p class="text-gray-400 text-sm">Michael Brown</p>
+                            </div>
+                            <span class="text-xs bg-green-600 text-green-100 px-2 py-1 h-fit rounded-full">Graded: 92%</span>
+                        </div>
+                        <div class="mt-3 flex justify-between items-center">
+                            <span class="text-xs text-gray-500">Graded yesterday</span>
+                            <button class="text-xs bg-gray-700 hover:bg-gray-600 text-white px-2 py-1 rounded transition duration-300">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                    <div class="bg-gray-900 rounded-lg p-4">
+                        <div class="flex justify-between">
+                            <div>
+                                <h3 class="font-semibold text-white">Linear Algebra Quiz</h3>
+                                <p class="text-gray-400 text-sm">Sarah Wilson</p>
+                            </div>
+                            <span class="text-xs bg-red-600 text-red-100 px-2 py-1 h-fit rounded-full">Graded: 65%</span>
+                        </div>
+                        <div class="mt-3 flex justify-between items-center">
+                            <span class="text-xs text-gray-500">Graded yesterday</span>
+                            <button class="text-xs bg-gray-700 hover:bg-gray-600 text-white px-2 py-1 rounded transition duration-300">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <button class="mt-4 w-full py-2 bg-gray-700 hover:bg-gray-600 text-white rounded-lg transition duration-300">
+                    View All Submissions
+                </button>
+            </div>
+
+            <!-- Class Performance -->
+            <div class="bg-gray-800 rounded-xl p-6 border border-gray-700 shadow-lg">
+                <h2 class="text-xl font-bold text-purple-400 mb-4">Class Performance</h2>
+                <div class="mb-4">
+                    <canvas id="classPerformanceChart" height="200"></canvas>
+                </div>
+                <div class="bg-gray-900 rounded-lg p-4">
+                    <h3 class="font-semibold text-white mb-2">AI Insights</h3>
+                    <p class="text-gray-400 text-sm mb-3">Based on recent class performance:</p>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-500 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                            </svg>
+                            <span class="text-gray-300">25% of students struggling with eigenvalues concept</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span class="text-gray-300">Strong performance in differential equations</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-500 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span class="text-gray-300">Recommended: Additional materials on matrix transformations</span>
+                        </li>
+                    </ul>
+                </div>
+                <button class="mt-4 w-full py-2 bg-gray-700 hover:bg-gray-600 text-white rounded-lg transition duration-300">
+                    View Detailed Analytics
+                </button>
+            </div>
+        </div>
+
+        <!-- Course Materials and AI Tools -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+            <!-- Course Materials -->
+            <div class="bg-gray-800 rounded-xl p-6 border border-gray-700 shadow-lg">
+                <h2 class="text-xl font-bold text-purple-400 mb-4">Course Materials</h2>
+                <div class="space-y-4">
+                    <div class="bg-gray-900 rounded-lg p-4 flex items-center">
+                        <div class="bg-purple-900 p-3 rounded-lg mr-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                            </svg>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-semibold text-white">Advanced Matrix Operations</h3>
+                            <p class="text-gray-400 text-sm">Last updated 2 days ago</p>
+                        </div>
+                        <div class="flex space-x-2">
+                            <button class="text-purple-400 hover:text-purple-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                                </svg>
+                            </button>
+                            <button class="text-purple-400 hover:text-purple-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="bg-gray-900 rounded-lg p-4 flex items-center">
+                        <div class="bg-blue-900 p-3 rounded-lg mr-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                            </svg>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-semibold text-white">Eigenvalues and Eigenvectors</h3>
+                            <p class="text-gray-400 text-sm">Last updated 1 week ago</p>
+                        </div>
+                        <div class="flex space-x-2">
+                            <button class="text-purple-400 hover:text-purple-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                                </svg>
+                            </button>
+                            <button class="text-purple-400 hover:text-purple-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="bg-gray-900 rounded-lg p-4 flex items-center">
+                        <div class="bg-green-900 p-3 rounded-lg mr-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                            </svg>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-semibold text-white">Differential Equations Practice</h3>
+                            <p class="text-gray-400 text-sm">Last updated 2 weeks ago</p>
+                        </div>
+                        <div class="flex space-x-2">
+                            <button class="text-purple-400 hover:text-purple-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                                </svg>
+                            </button>
+                            <button class="text-purple-400 hover:text-purple-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4 flex space-x-2">
+                    <button class="flex-1 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg transition duration-300">
+                        Upload Material
+                    </button>
+                    <button class="flex-1 py-2 bg-gray-700 hover:bg-gray-600 text-white rounded-lg transition duration-300">
+                        Create Material
+                    </button>
+                </div>
+            </div>
+
+            <!-- AI Teaching Tools -->
+            <div class="bg-gray-800 rounded-xl p-6 border border-gray-700 shadow-lg">
+                <h2 class="text-xl font-bold text-purple-400 mb-4">AI Teaching Tools</h2>
+                <div class="space-y-4">
+                    <div class="bg-gradient-to-r from-purple-900 to-indigo-900 rounded-lg p-4">
+                        <h3 class="font-semibold text-white mb-2">Generate Assignment</h3>
+                        <p class="text-gray-300 text-sm mb-3">Create customized assignments with AI-generated questions based on your course material.</p>
+                        <div class="flex space-x-2">
+                            <button class="bg-purple-600 hover:bg-purple-700 text-white text-sm font-medium py-2 px-3 rounded-lg transition duration-300">
+                                Create Quiz
+                            </button>
+                            <button class="bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium py-2 px-3 rounded-lg transition duration-300">
+                                Create Problem Set
+                            </button>
+                        </div>
+                    </div>
+                    <div class="bg-gradient-to-r from-blue-900 to-cyan-900 rounded-lg p-4">
+                        <h3 class="font-semibold text-white mb-2">Simplify Course Material</h3>
+                        <p class="text-gray-300 text-sm mb-3">Convert complex topics into more accessible formats with AI assistance.</p>
+                        <button class="bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium py-2 px-3 rounded-lg transition duration-300 w-full">
+                            Simplify Material
+                        </button>
+                    </div>
+                    <div class="bg-gradient-to-r from-green-900 to-teal-900 rounded-lg p-4">
+                        <h3 class="font-semibold text-white mb-2">Auto-Grade Assignments</h3>
+                        <p class="text-gray-300 text-sm mb-3">Use AI to grade objective questions and provide initial feedback on subjective answers.</p>
+                        <button class="bg-green-600 hover:bg-green-700 text-white text-sm font-medium py-2 px-3 rounded-lg transition duration-300 w-full">
+                            Grade Submissions
+                        </button>
+                    </div>
+                </div>
+                <div class="mt-4 bg-gray-900 rounded-lg p-4">
+                    <h3 class="font-semibold text-white mb-2">Student Performance Insights</h3>
+                    <p class="text-gray-400 text-sm mb-3">AI-generated insights based on student performance data:</p>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-purple-400 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                            </svg>
+                            <span class="text-gray-300">5 students may need additional support with matrix operations</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-purple-400 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                            </svg>
+                            <span class="text-gray-300">Class average improved 12% after latest material update</span>
+                        </li>
+                    </ul>
+                    <button class="mt-3 w-full py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg transition duration-300">
+                        View All Insights
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add Student Section -->
+        <div class="mt-8 bg-gradient-to-r from-purple-900 to-blue-900 rounded-xl p-6 border border-purple-700 shadow-lg">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="mb-4 md:mb-0 md:mr-6">
+                    <div class="w-24 h-24 bg-purple-600 rounded-full flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="flex-1">
+                    <h2 class="text-xl font-bold text-white mb-2">Add Students to Your Courses</h2>
+                    <p class="text-blue-100 mb-4">Quickly add students to your courses by email address or upload a CSV file with student information.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <button class="bg-purple-600 hover:bg-purple-700 text-white font-medium py-2 px-4 rounded-lg transition duration-300">
+                            Add by Email
+                        </button>
+                        <button class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition duration-300">
+                            Upload CSV
+                        </button>
+                        <button class="bg-gray-700 hover:bg-gray-600 text-white font-medium py-2 px-4 rounded-lg transition duration-300">
+                            Manage Enrollments
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Class Performance Chart
+        const ctx = document.getElementById('classPerformanceChart').getContext('2d');
+        const classPerformanceChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['90-100%', '80-89%', '70-79%', '60-69%', 'Below 60%'],
+                datasets: [{
+                    label: 'Advanced Mathematics',
+                    data: [8, 12, 7, 3, 2],
+                    backgroundColor: 'rgba(139, 92, 246, 0.7)',
+                    borderColor: 'rgb(139, 92, 246)',
+                    borderWidth: 1
+                }, {
+                    label: 'Calculus II',
+                    data: [10, 15, 12, 5, 3],
+                    backgroundColor: 'rgba(59, 130, 246, 0.7)',
+                    borderColor: 'rgb(59, 130, 246)',
+                    borderWidth: 1
+                }, {
+                    label: 'Linear Algebra',
+                    data: [6, 10, 8, 3, 1],
+                    backgroundColor: 'rgba(16, 185, 129, 0.7)',
+                    borderColor: 'rgb(16, 185, 129)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            color: 'rgb(209, 213, 219)'
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            color: 'rgb(209, 213, 219)'
+                        },
+                        grid: {
+                            color: 'rgba(75, 85, 99, 0.2)'
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            color: 'rgb(209, 213, 219)'
+                        },
+                        grid: {
+                            color: 'rgba(75, 85, 99, 0.2)'
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+

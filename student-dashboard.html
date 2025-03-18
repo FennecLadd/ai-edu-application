@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard - EduAI</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-gray-900 text-white">
+    <!-- Navigation -->
+    <nav class="bg-gray-800 border-b border-blue-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <span class="text-2xl font-bold text-purple-500">Edu<span class="text-blue-400">AI</span></span>
+                    </div>
+                    <div class="hidden md:block">
+                        <div class="ml-10 flex items-baseline space-x-4">
+                            <a href="#" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium">Dashboard</a>
+                            <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Courses</a>
+                            <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Assignments</a>
+                            <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Performance</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex items-center">
+                    <div class="relative">
+                        <button class="flex items-center text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+                            <span class="sr-only">Open user menu</span>
+                            <div class="h-8 w-8 rounded-full bg-blue-600 flex items-center justify-center">
+                                <span class="text-white font-medium">JS</span>
+                            </div>
+                            <span class="ml-2 text-gray-300">John Smith</span>
+                        </button>
+                    </div>
+                    <button class="ml-4 bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+                        <span class="sr-only">View notifications</span>
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Welcome Section -->
+        <div class="bg-gradient-to-r from-gray-800 to-gray-900 rounded-xl p-6 mb-8 border border-blue-700 shadow-lg">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div>
+                    <h1 class="text-2xl font-bold text-white mb-2">Welcome back, John!</h1>
+                    <p class="text-gray-300">You have 3 upcoming assignments and 2 new course materials.</p>
+                </div>
+                <div class="mt-4 md:mt-0">
+                    <button class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg transition duration-300 mr-2">
+                        View Assignments
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dashboard Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Enrolled Courses -->
+            <div class="bg-gray-800 rounded-xl p-6 border border-gray-700 shadow-lg">
+                <h2 class="text-xl font-bold text-blue-400 mb-4">My Courses</h2>
+                <div class="space-y-4">
+                    <div class="bg-gray-900 rounded-lg p-4 border-l-4 border-purple-500">
+                        <h3 class="font-semibold text-white">Advanced Mathematics</h3>
+                        <p class="text-gray-400 text-sm">Prof. Robert Johnson</p>
+                        <div class="mt-2 flex justify-between items-center">
+                            <span class="text-xs text-gray-500">Progress: 68%</span>
+                            <div class="w-32 bg-gray-700 rounded-full h-2">
+                                <div class="bg-purple-500 h-2 rounded-full" style="width: 68%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-gray-900 rounded-lg p-4 border-l-4 border-blue-500">
+                        <h3 class="font-semibold text-white">Data Structures</h3>
+                        <p class="text-gray-400 text-sm">Prof. Emily Chen</p>
+                        <div class="mt-2 flex justify-between items-center">
+                            <span class="text-xs text-gray-500">Progress: 42%</span>
+                            <div class="w-32 bg-gray-700 rounded-full h-2">
+                                <div class="bg-blue-500 h-2 rounded-full" style="width: 42%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-gray-900 rounded-lg p-4 border-l-4 border-green-500">
+                        <h3 class="font-semibold text-white">Machine Learning Basics</h3>
+                        <p class="text-gray-400 text-sm">Prof. David Kim</p>
+                        <div class="mt-2 flex justify-between items-center">
+                            <span class="text-xs text-gray-500">Progress: 23%</span>
+                            <div class="w-32 bg-gray-700 rounded-full h-2">
+                                <div class="bg-green-500 h-2 rounded-full" style="width: 23%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="mt-4 w-full py-2 bg-gray-700 hover:bg-gray-600 text-white rounded-lg transition duration-300">
+                    View All Courses
+                </button>
+            </div>
+
+            <!-- Upcoming Assignments -->
+            <div class="bg-gray-800 rounded-xl p-6 border border-gray-700 shadow-lg">
+                <h2 class="text-xl font-bold text-blue-400 mb-4">Upcoming Assignments</h2>
+                <div class="space-y-4">
+                    <div class="bg-gray-900 rounded-lg p-4 border-l-4 border-red-500">
+                        <div class="flex justify-between">
+                            <h3 class="font-semibold text-white">Linear Algebra Quiz</h3>
+                            <span class="text-xs text-red-400 font-semibold">Due Tomorrow</span>
+                        </div>
+                        <p class="text-gray-400 text-sm">Advanced Mathematics</p>
+                        <div class="mt-2 flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-500 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span class="text-xs text-gray-500">45 minutes estimated time</span>
+                        </div>
+                    </div>
+                    <div class="bg-gray-900 rounded-lg p-4 border-l-4 border-yellow-500">
+                        <div class="flex justify-between">
+                            <h3 class="font-semibold text-white">Binary Trees Implementation</h3>
+                            <span class="text-xs text-yellow-400 font-semibold">Due in 3 days</span>
+                        </div>
+                        <p class="text-gray-400 text-sm">Data Structures</p>
+                        <div class="mt-2 flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-500 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span class="text-xs text-gray-500">2 hours estimated time</span>
+                        </div>
+                    </div>
+                    <div class="bg-gray-900 rounded-lg p-4 border-l-4 border-green-500">
+                        <div class="flex justify-between">
+                            <h3 class="font-semibold text-white">Neural Networks Essay</h3>
+                            <span class="text-xs text-green-400 font-semibold">Due in 7 days</span>
+                        </div>
+                        <p class="text-gray-400 text-sm">Machine Learning Basics</p>
+                        <div class="mt-2 flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-500 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span class="text-xs text-gray-500">3 hours estimated time</span>
+                        </div>
+                    </div>
+                </div>
+                <button class="mt-4 w-full py-2 bg-gray-700 hover:bg-gray-600 text-white rounded-lg transition duration-300">
+                    View All Assignments
+                </button>
+            </div>
+
+            <!-- Performance Overview -->
+            <div class="bg-gray-800 rounded-xl p-6 border border-gray-700 shadow-lg">
+                <h2 class="text-xl font-bold text-blue-400 mb-4">Performance Overview</h2>
+                <div class="mb-4">
+                    <canvas id="performanceChart" height="200"></canvas>
+                </div>
+                <div class="bg-gray-900 rounded-lg p-4">
+                    <h3 class="font-semibold text-white mb-2">AI Insights</h3>
+                    <p class="text-gray-400 text-sm mb-3">Based on your recent performance, here are some insights:</p>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span class="text-gray-300">Strong in algorithm analysis and problem-solving</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-500 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                            </svg>
+                            <span class="text-gray-300">Need improvement in calculus applications</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-500 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span class="text-gray-300">Recommended: Review neural network fundamentals</span>
+                        </li>
+                    </ul>
+                </div>
+                <button class="mt-4 w-full py-2 bg-gray-700 hover:bg-gray-600 text-white rounded-lg transition duration-300">
+                    View Detailed Analytics
+                </button>
+            </div>
+        </div>
+
+        <!-- Recent Materials -->
+        <div class="mt-8">
+            <h2 class="text-xl font-bold text-blue-400 mb-4">Recently Added Materials</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Material 1 -->
+                <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="h-40 bg-gradient-to-r from-purple-900 to-blue-900 flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-white opacity-75" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                    </div>
+                    <div class="p-4">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-xs font-semibold text-blue-400">PDF Document</span>
+                            <span class="text-xs text-gray-500">Added 2 days ago</span>
+                        </div>
+                        <h3 class="font-bold text-white mb-1">Advanced Matrix Operations</h3>
+                        <p class="text-gray-400 text-sm mb-3">Comprehensive guide to matrix operations and their applications in linear algebra.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs text-gray-500">Advanced Mathematics</span>
+                            <button class="text-blue-400 hover:text-blue-300 text-sm font-medium">
+                                View Material
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Material 2 -->
+                <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="h-40 bg-gradient-to-r from-blue-900 to-indigo-900 flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-white opacity-75" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                    <div class="p-4">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-xs font-semibold text-blue-400">Video Lecture</span>
+                            <span class="text-xs text-gray-500">Added 1 day ago</span>
+                        </div>
+                        <h3 class="font-bold text-white mb-1">Binary Tree Traversal Techniques</h3>
+                        <p class="text-gray-400 text-sm mb-3">Visual explanation of different tree traversal algorithms with practical examples.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs text-gray-500">Data Structures</span>
+                            <button class="text-blue-400 hover:text-blue-300 text-sm font-medium">
+                                Watch Video
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Material 3 -->
+                <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="h-40 bg-gradient-to-r from-green-900 to-teal-900 flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-white opacity-75" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" />
+                        </svg>
+                    </div>
+                    <div class="p-4">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-xs font-semibold text-blue-400">Interactive Tutorial</span>
+                            <span class="text-xs text-gray-500">Added today</span>
+                        </div>
+                        <h3 class="font-bold text-white mb-1">Neural Networks Fundamentals</h3>
+                        <p class="text-gray-400 text-sm mb-3">Interactive guide to understanding neural networks with hands-on exercises.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs text-gray-500">Machine Learning Basics</span>
+                            <button class="text-blue-400 hover:text-blue-300 text-sm font-medium">
+                                Start Tutorial
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- AI Study Assistant -->
+        <div class="mt-8 bg-gradient-to-r from-blue-900 to-purple-900 rounded-xl p-6 border border-blue-700 shadow-lg">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="mb-4 md:mb-0 md:mr-6">
+                    <div class="w-24 h-24 bg-blue-600 rounded-full flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="flex-1">
+                    <h2 class="text-xl font-bold text-white mb-2">AI Study Assistant</h2>
+                    <p class="text-blue-100 mb-4">Need help understanding a concept? Your AI study assistant can simplify complex topics and generate practice questions.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <button class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition duration-300">
+                            Simplify Material
+                        </button>
+                        <button class="bg-purple-600 hover:bg-purple-700 text-white font-medium py-2 px-4 rounded-lg transition duration-300">
+                            Generate Practice Questions
+                        </button>
+                        <button class="bg-gray-700 hover:bg-gray-600 text-white font-medium py-2 px-4 rounded-lg transition duration-300">
+                            Ask a Question
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Performance Chart
+        const ctx = document.getElementById('performanceChart').getContext('2d');
+        const performanceChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6'],
+                datasets: [{
+                    label: 'Advanced Mathematics',
+                    data: [65, 72, 68, 75, 82, 88],
+                    borderColor: 'rgb(139, 92, 246)',
+                    backgroundColor: 'rgba(139, 92, 246, 0.1)',
+                    tension: 0.3,
+                    fill: true
+                }, {
+                    label: 'Data Structures',
+                    data: [70, 75, 72, 80, 78, 85],
+                    borderColor: 'rgb(59, 130, 246)',
+                    backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                    tension: 0.3,
+                    fill: true
+                }, {
+                    label: 'Machine Learning',
+                    data: [60, 65, 70, 68, 72, 78],
+                    borderColor: 'rgb(16, 185, 129)',
+                    backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                    tension: 0.3,
+                    fill: true
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            color: 'rgb(209, 213, 219)'
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100,
+                        ticks: {
+                            color: 'rgb(209, 213, 219)'
+                        },
+                        grid: {
+                            color: 'rgba(75, 85, 99, 0.2)'
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            color: 'rgb(209, 213, 219)'
+                        },
+                        grid: {
+                            color: 'rgba(75, 85, 99, 0.2)'
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+
